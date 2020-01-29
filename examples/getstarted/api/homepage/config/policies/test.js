@@ -1,7 +1,5 @@
 module.exports = async (ctx, next) => {
-  if (Math.rand() > 0.5) {
-    throw new Error('test-error');
-  }
+  console.log('in test policy');
 
   await next();
 };
