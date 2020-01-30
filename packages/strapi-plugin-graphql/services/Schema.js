@@ -501,8 +501,9 @@ const getActionDetails = resolver => {
  */
 const isResolvablePath = path => _.isString(path) && !_.isEmpty(path);
 
-const getPolicies = (config, { plugin, api } = {}) => {
+const getPolicies = config => {
   const { resolver, policies = [], resolverOf } = config;
+  const { api, plugin } = config['_metadatas'] || {};
 
   const policyFns = [];
 
